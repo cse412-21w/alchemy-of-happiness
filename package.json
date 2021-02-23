@@ -15,9 +15,9 @@
   "author": "cse412-staff",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cse412/alchemy-of-happiness/issues"
+    "url": "https://github.com/cse412-21w/alchemy-of-happiness/issues"
   },
-  "homepage": "https://github.com/cse412/alchemy-of-happiness#readme",
+  "homepage": "https://github.com/cse412-21w/alchemy-of-happiness#readme",
   "devDependencies": {
     "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.4",
