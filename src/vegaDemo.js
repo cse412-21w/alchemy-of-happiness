@@ -56,4 +56,56 @@ function drawBarVegaLite() {
     document.getElementById('view').appendChild(viewElement);
   });
 }
-  
+
+
+
+/** Wenxuan Qi
+ * Unfinished Part
+ * The above code is the original code in this file.
+ * 
+import happinessData from '../static/happiness_percentage.csv'
+"use strict";
+
+var happinessArray = [];
+const options = {
+  config: {
+    // Vega-Lite default configuration
+  },
+  init: (view) => {
+    // initialize tooltip handler
+    view.tooltip(new vegaTooltip.Handler().call);
+  },
+  view: {
+    // view constructor options
+    // remove the loader if you don't want to default to vega-datasets!
+    //   loader: vega.loader({
+    //     baseURL: "",
+    //   }),
+    renderer: "canvas",
+  },
+};
+
+vl.register(vega, vegaLite, options);
+
+d3.csv(happinessData).then(function(data){
+  data.forEach(function(d) {
+    d["Happiness.Score"] = Number(d["Happiness.Score"]);
+    d["Trust..Government.Corruption."] = Number(d["Trust..Government.Corruption."]);
+    happinessArray.push(d);
+  })
+  drawScatterVegaLite();
+})
+
+function drawScatterVegaLite() {
+  vl.markPoint({filled:true, color:'teal'})
+    .data(happinessArray)
+    .encode(
+      vl.x().fieldQ('Economy..GDP.per.Capita.'),
+      vl.y().fieldQ('Happiness.Score')
+    )
+    .render()
+    .then(viewElement => {
+      document.getElementById('view').appendChild(viewElement);
+    });
+}
+ */
