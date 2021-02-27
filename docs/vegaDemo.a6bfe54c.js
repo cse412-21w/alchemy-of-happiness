@@ -117,23 +117,85 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"ZQwg":[function(require,module,exports) {
-module.exports = "https://cse412-21w.github.io/alchemy-of-happiness/sunshine.45a98b78.csv";
+})({"zWvY":[function(require,module,exports) {
+module.exports = "https://cse412-21w.github.io/alchemy-of-happiness/happiness_percentage1.c251479a.csv";
 },{}],"CsaW":[function(require,module,exports) {
 "use strict";
 
-var _sunshine = _interopRequireDefault(require("../static/sunshine.csv"));
+var _happiness_percentage = _interopRequireDefault(require("../static/happiness_percentage1.csv"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import dataset
-"use strict"; // the code should be executed in "strict mode".
-// With strict mode, you can not, for example, use undeclared variables
+/**
+ import sunshineData from '../static/sunshine.csv'    // import dataset
+"use strict";     // the code should be executed in "strict mode".
+                  // With strict mode, you can not, for example, use undeclared variables
 
-
-var sunshineArray = []; // used to store data later
-
+var sunshineArray = [];   // used to store data later
 var citySet = [];
+
+const options = {
+  config: {
+    // Vega-Lite default configuration
+  },
+  init: (view) => {
+    // initialize tooltip handler
+    view.tooltip(new vegaTooltip.Handler().call);
+  },
+  view: {
+    // view constructor options
+    // remove the loader if you don't want to default to vega-datasets!
+    //   loader: vega.loader({
+    //     baseURL: "",
+    //   }),
+    renderer: "canvas",
+  },
+};
+
+vl.register(vega, vegaLite, options);
+
+// Again, We use d3.csv() to process data
+d3.csv(sunshineData).then(function(data) {
+  data.forEach(function(d){
+    sunshineArray.push(d);
+    if (!citySet.includes(d.city)) {
+      citySet.push(d.city);
+    }
+  })
+  drawBarVegaLite();
+});
+
+
+function drawBarVegaLite() {
+  // var sunshine = add_data(vl, sunshine.csv, format_type = NULL);
+  // your visualization goes here
+  vl.markBar({filled:true, color:'teal'})
+  .data(sunshineArray)
+  .encode(
+      vl.x().fieldN('month').sort('none'),
+      vl.y().fieldQ('sunshine'),
+      vl.tooltip(['sunshine']),
+  )
+  .width(450)
+  .height(450)
+  .render()
+  .then(viewElement => {
+    // render returns a promise to a DOM element containing the chart
+    // viewElement.value contains the Vega View object instance
+    document.getElementById('view').appendChild(viewElement);
+  });
+}
+*/
+
+/** Wenxuan Qi
+ * Economy + Trust vs Happiness Score
+ * The above code is the original code in this file.
+ */
+"use strict";
+
+var happinessArray = [];
+var yearSet = []; //var regionSet = [];
+
 var options = {
   config: {// Vega-Lite default configuration
   },
@@ -150,30 +212,34 @@ var options = {
     renderer: "canvas"
   }
 };
-vl.register(vega, vegaLite, options); // Again, We use d3.csv() to process data
-
-d3.csv(_sunshine.default).then(function (data) {
+vl.register(vega, vegaLite, options);
+d3.csv(_happiness_percentage.default).then(function (data) {
   data.forEach(function (d) {
-    sunshineArray.push(d);
+    happinessArray.push(d);
 
-    if (!citySet.includes(d.city)) {
-      citySet.push(d.city);
-    }
+    if (!yearSet.includes(d.year)) {
+      yearSet.push(d.year);
+    } //if (!regionSet.includes(d.Region)) {
+    //regionSet.push(d.Region);
+    //}
+
   });
-  drawBarVegaLite();
+  drawScatterVegaLite();
 });
 
-function drawBarVegaLite() {
-  // var sunshine = add_data(vl, sunshine.csv, format_type = NULL);
-  // your visualization goes here
-  vl.markBar({
-    filled: true,
-    color: 'teal'
-  }).data(sunshineArray).encode(vl.x().fieldN('month').sort('none'), vl.y().fieldQ('sunshine'), vl.tooltip(['sunshine'])).width(450).height(450).render().then(function (viewElement) {
-    // render returns a promise to a DOM element containing the chart
-    // viewElement.value contains the Vega View object instance
+function drawScatterVegaLite() {
+  var selection2 = vl.selectSingle('happiness').fields('year').init({
+    year: yearSet[0]
+  }).bind(vl.radio(yearSet));
+  return vl.markPoint({
+    filled: true
+  }).data(happinessArray).select(selection2).encode(vl.x().fieldQ('Economy'), vl.y().fieldQ('Happiness_Score'), vl.size().fieldQ('Trust_Government_Corruption').legend({
+    symbolOpacity: 0.7
+  }), vl.color().fieldN('Region').legend({
+    symbolOpacity: 1
+  }), vl.opacity().if(selection2).value(0.1), vl.tooltip(['Happiness_Score', 'Economy', 'Trust_Government_Corruption', 'Region'])).width(500).height(500).render().then(function (viewElement) {
     document.getElementById('view').appendChild(viewElement);
   });
 }
-},{"../static/sunshine.csv":"ZQwg"}]},{},["CsaW"], null)
-//# sourceMappingURL=https://cse412-21w.github.io/alchemy-of-happiness/vegaDemo.40e2e530.js.map
+},{"../static/happiness_percentage1.csv":"zWvY"}]},{},["CsaW"], null)
+//# sourceMappingURL=https://cse412-21w.github.io/alchemy-of-happiness/vegaDemo.a6bfe54c.js.map
