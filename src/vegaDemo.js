@@ -1,4 +1,5 @@
-import sunshineData from '../static/sunshine.csv'    // import dataset
+/**
+ import sunshineData from '../static/sunshine.csv'    // import dataset
 "use strict";     // the code should be executed in "strict mode".
                   // With strict mode, you can not, for example, use undeclared variables
 
@@ -56,17 +57,22 @@ function drawBarVegaLite() {
     document.getElementById('view').appendChild(viewElement);
   });
 }
+*/
+
+
 
 
 
 /** Wenxuan Qi
- * Unfinished Part
+ * Economy + Trust vs Happiness Score
  * The above code is the original code in this file.
- * 
-import happinessData from '../static/happiness_percentage.csv'
+ */ 
+import happinessData from '../static/happiness_percentage1.csv'
 "use strict";
 
 var happinessArray = [];
+var yearSet = [];
+//var regionSet = [];
 const options = {
   config: {
     // Vega-Lite default configuration
@@ -89,23 +95,41 @@ vl.register(vega, vegaLite, options);
 
 d3.csv(happinessData).then(function(data){
   data.forEach(function(d) {
-    d["Happiness.Score"] = Number(d["Happiness.Score"]);
-    d["Trust..Government.Corruption."] = Number(d["Trust..Government.Corruption."]);
     happinessArray.push(d);
+    if (!yearSet.includes(d.year)) {
+      yearSet.push(d.year);
+    }
+    //if (!regionSet.includes(d.Region)) {
+      //regionSet.push(d.Region);
+    //}
   })
   drawScatterVegaLite();
 })
 
 function drawScatterVegaLite() {
-  vl.markPoint({filled:true, color:'teal'})
+  const selection2 = vl.selectSingle('happiness')
+    .fields('year')
+    .init({year: yearSet[0]})
+    .bind(vl.radio(yearSet));
+  
+  return vl.markPoint({filled:true})
     .data(happinessArray)
+    .select(selection2)
     .encode(
-      vl.x().fieldQ('Economy..GDP.per.Capita.'),
-      vl.y().fieldQ('Happiness.Score')
+      vl.x().fieldQ('Economy'),
+      vl.y().fieldQ('Happiness_Score'),
+      vl.size().fieldQ('Trust_Government_Corruption')
+               .legend({symbolOpacity: 0.7}),
+      vl.color().fieldN('Region')
+               .legend({symbolOpacity: 1}),
+      vl.opacity().if(selection2).value(0.1),
+      vl.tooltip(['Happiness_Score', 'Economy', 'Trust_Government_Corruption', 'Region'])
     )
+    .width(500)
+    .height(500)
     .render()
     .then(viewElement => {
       document.getElementById('view').appendChild(viewElement);
     });
 }
- */
+
