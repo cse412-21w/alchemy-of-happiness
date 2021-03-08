@@ -72,7 +72,6 @@ import happinessData from '../static/happiness_percentage1.csv'
 
 var happinessArray = [];
 var yearSet = [];
-//var regionSet = [];
 const options = {
   config: {
     // Vega-Lite default configuration
@@ -99,9 +98,6 @@ d3.csv(happinessData).then(function(data){
     if (!yearSet.includes(d.year)) {
       yearSet.push(d.year);
     }
-    //if (!regionSet.includes(d.Region)) {
-      //regionSet.push(d.Region);
-    //}
   })
   drawScatterVegaLite();
 })
