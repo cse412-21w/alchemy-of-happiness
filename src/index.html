@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css" integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A==" crossorigin="anonymous" />
         <link rel="stylesheet" href="style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600" rel="stylesheet" />
         <!-- For using vega-lite -->
         <script src="https://cdn.jsdelivr.net/npm/vega"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
@@ -18,35 +19,75 @@
     <body>
         <div id="fullPage" class="fullpage-wrapper">
             <div class="fp-section section">
-                <h1>Title</h1>
+                    <div>
+                        <header>
+                            <h3>Don't Worry, Be Happy.</h3>
+                        </header>
+                    </div>
+                    <blackquote> 
+                        Alchemy of Happiness
+                    </blackquote>
             </div>
 
             <div class="fp-section section">
-              <h3>jia zhuang shuo xie shen me</h3>
-              <img src="../Barplot_country.gif" alt="Barplot_country" style="height:400px">
+                <h3>jia zhuang shuo xie shen me</h3>
+                <img src="../Barplot_country.gif" alt="Barplot_country" style="height:400px">
             </div>
 
-            <div class="fp-section section">Some Visualizations
-              <div class="slide">
-                <section class="description">
-                  <h3>Some Description</h3>
-                </section>
-                <section class="visualization">
-                  <section id = "vegaDemo">
-                    <!--
-                      Economy + Trust vs Happiness Plot
-                      Wenxuxan Qi
-                    -->
-                    <h3>Economy Proportion and Trust in Government vs Happiness:</h3>
-                    <div id="view"></div>
-                  </section>
-                </section>
-              </div>
-              <div class="slide">Visualization 2</div>            
+            <div class="fp-section section">
+                <div>
+                    <section class="description">
+                        <h3>Some Description</h3>
+                    </section>
+                    <section class="visualization">
+                        <section id = "vegaDemo">
+                            <!--
+                              Economy + Trust vs Happiness Plot
+                              Wenxuxan Qi
+                            -->
+                            <h3>Economy Proportion and Trust in Government vs Happiness:</h3>
+                            <div id="view"></div>
+                        </section>
+                    </section>
+                </div>         
             </div>
-            <div class="fp-section section">Some Content</div>
+            <div class="fp-section section">
+                <div class='tableauPlaceholder' id='viz1613992170811' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                        <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;health_happiness&#47;Sheet1&#47;1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz'  style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='health_happiness&#47;Sheet1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;health_happiness&#47;Sheet1&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='no' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>                
+                <script type='text/javascript'>                    
+                    var divElement = document.getElementById('viz1613992170811');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width='85%';
+                    vizElement.style.height=(divElement.offsetWidth*0.4)+'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                </script> 
+            </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
+        <script src="index.js"> </script>
+        <script src="econ.js"> </script>
     </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
-    <script src="index.js"> </script>
 </html>
