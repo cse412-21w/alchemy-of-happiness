@@ -117,12 +117,64 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"Focm":[function(require,module,exports) {
-new fullpage('#fullPage', {
-  licenseKey: '3B260588-D40B40CC-9E84CF5D-1BAC5B3D',
-  autoScrolling: true,
-  navigation: true,
-  loopBottom: true
+})({"zWvY":[function(require,module,exports) {
+module.exports = "https://cse412-21w.github.io/alchemy-of-happiness/happiness_percentage1.c251479a.csv";
+},{}],"NzOO":[function(require,module,exports) {
+"use strict";
+
+var _happiness_percentage = _interopRequireDefault(require("../static/happiness_percentage1.csv"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/** Wenxuan Qi
+ * Economy + Trust vs Happiness Score
+ * The above code is the original code in this file.
+ */
+"use strict";
+
+var happinessArray = [];
+var yearSet = [];
+var options = {
+  config: {// Vega-Lite default configuration
+  },
+  init: function init(view) {
+    // initialize tooltip handler
+    view.tooltip(new vegaTooltip.Handler().call);
+  },
+  view: {
+    // view constructor options
+    // remove the loader if you don't want to default to vega-datasets!
+    //   loader: vega.loader({
+    //     baseURL: "",
+    //   }),
+    renderer: "canvas"
+  }
+};
+vl.register(vega, vegaLite, options);
+d3.csv(_happiness_percentage.default).then(function (data) {
+  data.forEach(function (d) {
+    happinessArray.push(d);
+
+    if (!yearSet.includes(d.year)) {
+      yearSet.push(d.year);
+    }
+  });
+  drawScatterVegaLite();
 });
-},{}]},{},["Focm"], null)
-//# sourceMappingURL=https://cse412-21w.github.io/alchemy-of-happiness/src.620188dd.js.map
+
+function drawScatterVegaLite() {
+  var selection2 = vl.selectSingle('happiness').fields('year').init({
+    year: yearSet[0]
+  }).bind(vl.radio(yearSet));
+  return vl.markPoint({
+    filled: true
+  }).data(happinessArray).select(selection2).encode(vl.x().fieldQ('Economy'), vl.y().fieldQ('Happiness_Score'), vl.size().fieldQ('Trust_Government_Corruption').legend({
+    symbolOpacity: 0.7
+  }), vl.color().fieldN('Region').legend({
+    symbolOpacity: 1
+  }), vl.opacity().if(selection2).value(0.1), vl.tooltip(['Happiness_Score', 'Economy', 'Trust_Government_Corruption', 'Region'])).width(500).height(300).render().then(function (viewElement) {
+    document.getElementById('view').appendChild(viewElement);
+  });
+}
+},{"../static/happiness_percentage1.csv":"zWvY"}]},{},["NzOO"], null)
+//# sourceMappingURL=https://cse412-21w.github.io/alchemy-of-happiness/econ.bc207a97.js.map

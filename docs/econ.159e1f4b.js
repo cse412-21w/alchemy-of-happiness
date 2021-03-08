@@ -119,73 +119,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"../static/happiness_percentage1.csv":[function(require,module,exports) {
 module.exports = "/happiness_percentage1.a605160b.csv";
-},{}],"vegaDemo.js":[function(require,module,exports) {
+},{}],"econ.js":[function(require,module,exports) {
 "use strict";
 
 var _happiness_percentage = _interopRequireDefault(require("../static/happiness_percentage1.csv"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- import sunshineData from '../static/sunshine.csv'    // import dataset
-"use strict";     // the code should be executed in "strict mode".
-                  // With strict mode, you can not, for example, use undeclared variables
-
-var sunshineArray = [];   // used to store data later
-var citySet = [];
-
-const options = {
-  config: {
-    // Vega-Lite default configuration
-  },
-  init: (view) => {
-    // initialize tooltip handler
-    view.tooltip(new vegaTooltip.Handler().call);
-  },
-  view: {
-    // view constructor options
-    // remove the loader if you don't want to default to vega-datasets!
-    //   loader: vega.loader({
-    //     baseURL: "",
-    //   }),
-    renderer: "canvas",
-  },
-};
-
-vl.register(vega, vegaLite, options);
-
-// Again, We use d3.csv() to process data
-d3.csv(sunshineData).then(function(data) {
-  data.forEach(function(d){
-    sunshineArray.push(d);
-    if (!citySet.includes(d.city)) {
-      citySet.push(d.city);
-    }
-  })
-  drawBarVegaLite();
-});
-
-
-function drawBarVegaLite() {
-  // var sunshine = add_data(vl, sunshine.csv, format_type = NULL);
-  // your visualization goes here
-  vl.markBar({filled:true, color:'teal'})
-  .data(sunshineArray)
-  .encode(
-      vl.x().fieldN('month').sort('none'),
-      vl.y().fieldQ('sunshine'),
-      vl.tooltip(['sunshine']),
-  )
-  .width(450)
-  .height(450)
-  .render()
-  .then(viewElement => {
-    // render returns a promise to a DOM element containing the chart
-    // viewElement.value contains the Vega View object instance
-    document.getElementById('view').appendChild(viewElement);
-  });
-}
-*/
 
 /** Wenxuan Qi
  * Economy + Trust vs Happiness Score
@@ -194,8 +133,7 @@ function drawBarVegaLite() {
 "use strict";
 
 var happinessArray = [];
-var yearSet = []; //var regionSet = [];
-
+var yearSet = [];
 var options = {
   config: {// Vega-Lite default configuration
   },
@@ -219,10 +157,7 @@ d3.csv(_happiness_percentage.default).then(function (data) {
 
     if (!yearSet.includes(d.year)) {
       yearSet.push(d.year);
-    } //if (!regionSet.includes(d.Region)) {
-    //regionSet.push(d.Region);
-    //}
-
+    }
   });
   drawScatterVegaLite();
 });
@@ -237,7 +172,7 @@ function drawScatterVegaLite() {
     symbolOpacity: 0.7
   }), vl.color().fieldN('Region').legend({
     symbolOpacity: 1
-  }), vl.opacity().if(selection2).value(0.1), vl.tooltip(['Happiness_Score', 'Economy', 'Trust_Government_Corruption', 'Region'])).width(500).height(500).render().then(function (viewElement) {
+  }), vl.opacity().if(selection2).value(0.1), vl.tooltip(['Happiness_Score', 'Economy', 'Trust_Government_Corruption', 'Region'])).width(500).height(300).render().then(function (viewElement) {
     document.getElementById('view').appendChild(viewElement);
   });
 }
@@ -269,7 +204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61565" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55436" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -445,5 +380,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","vegaDemo.js"], null)
-//# sourceMappingURL=/vegaDemo.ea1a58a6.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","econ.js"], null)
+//# sourceMappingURL=/econ.159e1f4b.js.map
