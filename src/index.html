@@ -43,13 +43,12 @@
             <div class="fp-section section">
                 <div class="description">
 
-                    <p><h2> Time </h2> 
+                    <p><h2> Introduction to <happy>Happiness</happy></h2> 
                         <br><br>  Our data set comes from World Happiness Report. It is a survey of the global happiness and gain recognitions from governments, organizations and civil societies. <br><br> 
                             
                         The reports review the state of happiness in the world today and show how the new science of happiness explains personal and national variations in happiness. <br><br> 
                                 
-                        To achieve our goal, we selected 4 potential factors in the report, trust in government, economy, life expectancy, and GDP per capita. 
-                        We are hoping to see how does each factor effect the happiness score? Which factor is the leading cause to a country's happiness.
+                        To achieve our goal, we selected 4 potential factors in the report, trust in government, economy, life expectancy, and GDP per capita. We are hoping to see how does each factor effect the happiness score? Which factor is the leading cause to a country's happiness.
                     </p>
                 </div>
                 <div class="visualization">
@@ -218,6 +217,95 @@
                 </div>
                 <div class = "visualization">
                     <div id="GDPview"></div>
+                </div>
+            </div>
+
+            <!--GDP and Happiness Page2-->
+            <div class="fp-section section">
+                <div class = "description">
+                    <p> 
+                        <h2>Money vs <happy>Happiness</happy><br> Positive Correlation <br>but<br> <happy>High</happy> Variance </h2> <br> <br>
+                        Looking at the histogram, countries with high GDP tend to have a high happiness score as well. However, the variance stays high. Within a certain interval of happiness score, the range of GDP is huge. Thus, GDP is one important factor of a country’s happiness level, but it turns out that it not the determining factor. <br> <br>Countries with relatively low GDP can still have a high happiness score. 
+                    </p>
+                </div>
+                <div class = "visualization">
+                    <div class='tableauPlaceholder' id='viz1615315235171' style='position: relative'>
+                        <noscript>
+                            <a href='#'>
+                                <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;V5&#47;V5Happinessrankvs_GDP&#47;V5Happinessrankvs_GDP&#47;1_rss.png' style='border: none' />
+                            </a>
+                        </noscript>
+                        <object class='tableauViz'  style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                            <param name='embed_code_version' value='3' /> 
+                            <param name='site_root' value='' />
+                            <param name='name' value='V5Happinessrankvs_GDP&#47;V5Happinessrankvs_GDP' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;V5&#47;V5Happinessrankvs_GDP&#47;V5Happinessrankvs_GDP&#47;1.png' /> 
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='language' value='en' />
+                        </object>
+                    </div>                
+                    <script type='text/javascript'>                    
+                        var divElement = document.getElementById('viz1615315235171');                    
+                        var vizElement = divElement.getElementsByTagName('object')[0];                    
+                        vizElement.style.width='100%';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+                        var scriptElement = document.createElement('script');                    
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                    </script>
+                </div>
+            </div>
+
+            <!--GDP and Happiness Page3-->
+            <div class="fp-section section">
+                <div class = "description">
+                    <p> 
+                        <h2>Money vs <happy>Happiness</happy><br> Case Study</h2> <br> <br>
+                        In the default setting, data of 5 countries, Armenia, Australia, Bangladesh, Bhutan, and Bolivia, are presented. A clear positive trend is shown when looking at Bangladesh, Bolivia, and Australia. For the three countries, an increase in GDP corresponds with an increase in the happiness score.  
+                        <br> <br>
+                        However, if we look at Armenia, Bhutan, and Bolivia, they all have similar GDP but different happiness scores. It shows, with the same GDP, a country could improve its happiness level in other ways. 
+                    </p>
+                </div>
+                <div class = "visualization">
+                    <div class='tableauPlaceholder' id='viz1615314884885' style='position: relative'>
+                        <noscript>
+                            <a href='#'>
+                                <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;V4&#47;V4happinessvsGDPCasestudy&#47;V4HappinessvsGPDforcountriescasestudy&#47;1_rss.png' style='border: none' />
+                            </a>
+                        </noscript>
+                        <object class='tableauViz'  style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                            <param name='embed_code_version' value='3' /> 
+                            <param name='site_root' value='' />
+                            <param name='name' value='V4happinessvsGDPCasestudy&#47;V4HappinessvsGPDforcountriescasestudy' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;V4&#47;V4happinessvsGDPCasestudy&#47;V4HappinessvsGPDforcountriescasestudy&#47;1.png' /> 
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='language' value='en' />
+                            <param name='filter' value='publish=yes' />
+                        </object>
+                    </div>                
+                    <script type='text/javascript'>                    
+                        var divElement = document.getElementById('viz1615314884885');                    
+                        var vizElement = divElement.getElementsByTagName('object')[0];                    
+                        vizElement.style.width='100%';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+                        var scriptElement = document.createElement('script');                    
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);                  
+                    </script>
                 </div>
             </div>
 
