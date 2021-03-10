@@ -35,6 +35,7 @@ d3.csv(happinessData).then(function(data){
     }
   })
   drawScatterVegaLite();
+  drawGDPVegaLite();
 })
 
 function drawScatterVegaLite() {
@@ -62,4 +63,24 @@ function drawScatterVegaLite() {
     .then(viewElement => {
       document.getElementById('view').appendChild(viewElement);
     });
-}
+  }
+  
+function drawGDPVegaLite() {
+  return vl.markPoint({filled:true})
+    .data(happinessArray)
+    .transform(
+      vl.groupby('Country')
+        .aggregate(vl.average('Happiness_Score').as('Average_Happiness_Score'), vl.average('Economy').as('Average_GDP'))  
+    )
+    .encode(
+      vl.x().fieldQ('Average_GDP'),
+        vl.y().fieldQ('Average_Happiness_Score'),
+      vl.tooltip(['Country','Average_GDP', 'Average_Happiness_Score'])
+    )
+    .width(500)
+    .height(400)
+    .render()
+    .then(viewElement => {
+      document.getElementById('GDPview').appendChild(viewElement);
+    });
+}  
