@@ -5,7 +5,7 @@ library(scales)
 library(gifski)
 library(viridis)
 
-d =read.csv(file = 'C:/Users/18383/Desktop/CSE412/happiness_overall_15-19.csv')
+d =read.csv(file = '/Users/xxs77/desktop/happiness_percentage.csv')
 d
 d_formatted <- d %>% 
   mutate(value = Score) %>% 
