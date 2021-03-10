@@ -160,6 +160,7 @@ d3.csv(_happiness_percentage.default).then(function (data) {
     }
   });
   drawScatterVegaLite();
+  drawGDPVegaLite();
 });
 
 function drawScatterVegaLite() {
@@ -174,6 +175,14 @@ function drawScatterVegaLite() {
     symbolOpacity: 1
   }), vl.opacity().if(selection2).value(0.1), vl.tooltip(['Happiness_Score', 'Economy', 'Trust_Government_Corruption', 'Region'])).width(500).height(300).render().then(function (viewElement) {
     document.getElementById('view').appendChild(viewElement);
+  });
+}
+
+function drawGDPVegaLite() {
+  return vl.markPoint({
+    filled: true
+  }).data(happinessArray).transform(vl.groupby('Country').aggregate(vl.average('Happiness_Score').as('Average_Happiness_Score'), vl.average('Economy').as('Average_GDP'))).encode(vl.x().fieldQ('Average_GDP'), vl.y().fieldQ('Average_Happiness_Score'), vl.tooltip(['Country', 'Average_GDP', 'Average_Happiness_Score'])).width(500).height(400).render().then(function (viewElement) {
+    document.getElementById('GDPview').appendChild(viewElement);
   });
 }
 },{"../static/happiness_percentage1.csv":"../static/happiness_percentage1.csv"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -204,7 +213,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55436" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51928" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

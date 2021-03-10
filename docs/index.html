@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css" integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A==" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cse412-21w.github.io/alchemy-of-happiness/style.13bf7d31.css">
+        <link rel="stylesheet" href="https://cse412-21w.github.io/alchemy-of-happiness/style.413393e3.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600" rel="stylesheet">
         <!-- For using vega-lite -->
         <script src="https://cdn.jsdelivr.net/npm/vega"></script>
@@ -29,63 +29,217 @@
                     </blackquote>
             </div>
 
+            <!--Intro Page1-->
             <div class="fp-section section">
-                <h3>jia zhuang shuo xie shen me</h3>
-                <img src="https://cse412-21w.github.io/alchemy-of-happiness/Barplot_country.df1ab251.gif" alt="Barplot_country" style="height:400px">
+                <div id="introtext1">
+                    <h2>Happiness is a common puersue for people worldwide. </h2> <br>  <br>
+                    Then, the question is what makes people happy? What are the most important factors that makes people happy? <br> 
+                    Dig a little bit deeper into global happiness data and the result is interesting.
+                </div>
+                <img src="https://cse412-21w.github.io/alchemy-of-happiness/Barplot_country.8fe0f74c.gif" alt="Barplot_country" style="height:400px;width:65%">
+            </div> 
+
+            <!--Intro Page2-->
+            <div class="fp-section section">
+                <div class="description">
+
+                    <p></p><h2> Time </h2> 
+                        <br><br>  Our data set comes from World Happiness Report. It is a survey of the global happiness and gain recognitions from governments, organizations and civil societies. <br><br> 
+                            
+                        The reports review the state of happiness in the world today and show how the new science of happiness explains personal and national variations in happiness. <br><br> 
+                                
+                        To achieve our goal, we selected 4 potential factors in the report, trust in government, economy, life expectancy, and GDP per capita. 
+                        We are hoping to see how does each factor effect the happiness score? Which factor is the leading cause to a country's happiness.
+                    <p></p>
+                </div>
+                <div class="visualization">
+                    <div class="tableauPlaceholder" id="viz1615359317231" style="position: relative">
+                        <noscript>
+                            <a href="#">
+                                <img alt=" " src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;health_happiness_16153591334560&#47;Sheet1&#47;1_rss.png" style="border: none">
+                            </a>
+                        </noscript>
+                        <object class="tableauViz" style="display:none;">
+                            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"> 
+                            <param name="embed_code_version" value="3"> 
+                            <param name="site_root" value="">
+                            <param name="name" value="health_happiness_16153591334560&#47;Sheet1">
+                            <param name="tabs" value="no">
+                            <param name="toolbar" value="yes">
+                            <param name="static_image" value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;health_happiness_16153591334560&#47;Sheet1&#47;1.png"> 
+                            <param name="animate_transition" value="yes">
+                            <param name="display_static_image" value="yes">
+                            <param name="display_spinner" value="yes">
+                            <param name="display_overlay" value="yes">
+                            <param name="display_count" value="yes">
+                            <param name="language" value="en">
+                            <param name="filter" value="publish=yes">
+                        </object>
+                    </div>                
+                    <script>var divElement = document.getElementById('viz1615359317231');
+var vizElement = divElement.getElementsByTagName('object')[0];
+vizElement.style.width = '100%'; //vizElement.style.height=(divElement.offsetWidth*0.75)+'px';  
+
+vizElement.style.height = '400px';
+var scriptElement = document.createElement('script');
+scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+                </div>
+            </div>
+
+
+
+            <div class="fp-section section">
+                <div class="description">
+                    <p id="govtext"> 
+                        </p><h2>Govorment & Economy <br>vs<br> <happy>Happiness</happy></h2> <br> <br>
+                        The graph demonstrate the correlation on Economy porportion and trust in Government VS Happiness score. We estimated to obverse a positive relationship, which however is not shown significantly in the graph. <br> <br> Alternatively, we found that the higher the level of trust in Government is, the more polarized the happiness score data distributes. Also, there is no convincing evidence showing that there is a direct connection between economy and happniess. We cannot conclude whether there is a linear relationship given to the graph
+                    <p></p>
+                </div>
+                <div class="visualization">
+                    <section id="vegaDemo">
+                        <!--
+                          Economy + Trust vs Happiness Plot
+                          Wenxuxan Qi
+                        -->
+                        <h3>Economy Proportion and Trust in Government vs Happiness:</h3>
+                    <div id="view"></div>
+                </section></div>
+            </div>
+
+
+            <!--Health and Happiness Page1-->
+            <div class="fp-section section">
+                <div class="description">
+
+                    <p>
+                        </p><h2> Life Expectancy</h2> <br><br>  Darker regions under happiness score corresponds with darker shaded dots under life expectancy factor. <br><br> 
+                        From the map, it can be observed that regions with high life expectaancy are generally happier.
+                    <p></p>
+                </div>
+                <div class="visualization">
+                    <div class="tableauPlaceholder" id="viz1614308093834" style="position: relative;margin-left: auto;margin-right: auto;">
+                        <noscript>
+                            <a href="#">
+                                <img alt=" " src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;He&#47;HealthLifeExpectancyvs_HappinessScore&#47;Sheet4&#47;1_rss.png" style="border: none">
+                            </a>
+                        </noscript>
+                        <object class="tableauViz" style="display:none;">
+                            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"> 
+                            <param name="embed_code_version" value="3"> 
+                            <param name="site_root" value="">
+                            <param name="name" value="HealthLifeExpectancyvs_HappinessScore&#47;Sheet4">
+                            <param name="tabs" value="no">
+                            <param name="toolbar" value="yes">
+                            <param name="static_image" value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;He&#47;HealthLifeExpectancyvs_HappinessScore&#47;Sheet4&#47;1.png"> 
+                            <param name="animate_transition" value="yes">
+                            <param name="display_static_image" value="yes">
+                            <param name="display_spinner" value="yes">
+                            <param name="display_overlay" value="yes">
+                            <param name="display_count" value="yes">
+                            <param name="language" value="en">
+                            <param name="filter" value="publish=yes">
+                        </object>
+                    </div>                
+                    <script>var divElement = document.getElementById('viz1614308093834');
+var vizElement = divElement.getElementsByTagName('object')[0];
+vizElement.style.width = '90%';
+vizElement.style.height = '520px';
+var scriptElement = document.createElement('script');
+scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+                </div>
+            </div>
+
+
+
+            <!--Health and Happiness Page2-->
+            <div class="fp-section section">
+                <div class="description">
+                    <p>
+                        </p><h2> Health = <happy>Happiness</happy></h2> <br><br>
+                        The scatter plot illustrates the relationship between the two variables, 
+                        showing all five years of data with X-axis being Happiness Score and Y-axis being Life Expectancy.
+                        <br> <br>
+                        We divided the points into four sub-sections by high/low life expectancy & high/low happiness score. 
+                        As we can see that majority of the data is divided into Quadrant I (+,+) and Quadrant III (-,-), which means life expectancy directly relates to its happiness score.
+                        <br> <br>
+                        More specificly, high life expectancy countries has high happiness score and, conversely, low life expectancy countries has low happiness score.
+                    <p></p>
+                </div>
+                <div class="visualization">
+                    <div class="tableauPlaceholder" id="viz1615270670236" style="position: relative">
+                        <noscript>
+                            <a href="#">
+                                <img alt=" " src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;He&#47;HealthLifeExpectancyvs_HappinessScore&#47;Sheet2&#47;1_rss.png" style="border: none">
+                            </a>
+                        </noscript>
+                        <object class="tableauViz" style="display:none;">
+                            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"> 
+                            <param name="embed_code_version" value="3"> 
+                            <param name="site_root" value="">
+                            <param name="name" value="HealthLifeExpectancyvs_HappinessScore&#47;Sheet2">
+                            <param name="tabs" value="no"><param name="toolbar" value="yes">
+                            <param name="static_image" value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;He&#47;HealthLifeExpectancyvs_HappinessScore&#47;Sheet2&#47;1.png"> 
+                            <param name="animate_transition" value="yes">
+                            <param name="display_static_image" value="yes">
+                            <param name="display_spinner" value="yes">
+                            <param name="display_overlay" value="yes">
+                            <param name="display_count" value="yes">
+                            <param name="language" value="en">
+                            <param name="filter" value="publish=yes">
+                        </object>
+                    </div>                
+                    <script>var divElement = document.getElementById('viz1615270670236');
+var vizElement = divElement.getElementsByTagName('object')[0];
+vizElement.style.width = '100%';
+vizElement.style.height = '475px';
+var scriptElement = document.createElement('script');
+scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+                </div>
+            </div>
+
+            <!--GDP and Happiness Page1-->
+            <div class="fp-section section">
+                <div class="description">
+                    <p> 
+                        </p><h2>Money = <happy>Happiness</happy>?</h2> <br> <br>
+                        On average, a country with high GDP per capita will have a high happiness score. <br> <br>
+                        However, does it really implies that GDP per capita is the most important factor of the happiness level of a country? <br> <br>
+                        How much impact does GDP have on the happiness level?
+                    <p></p>
+                </div>
+                <div class="visualization">
+                    <div id="GDPview"></div>
+                </div>
             </div>
 
             <div class="fp-section section">
-                <div>
-                    <section class="description">
-                        <h3>Some Description</h3>
-                    </section>
-                    <section class="visualization">
-                        <section id="vegaDemo">
-                            <!--
-                              Economy + Trust vs Happiness Plot
-                              Wenxuxan Qi
-                            -->
-                            <h3>Economy Proportion and Trust in Government vs Happiness:</h3>
-                            <div id="view"></div>
-                        </section>
-                    </section>
-                </div>         
+                <div class="conclusion">
+                    <p> 
+                        </p><h2>Conclusion</h2> <br> <br>
+                        We studied four potential factors of happiness scores: trust in government, economy, Life expectancy, and GDP per capita. Over the four factors, trust in government and economy has less effect on a countries happiness score. GDP per capita shows a positive correlation with happiness score but the variance stays high. Life expectancy is the top one influential factor to happiness. Countries with a high average people's life expectancy always have a high happiness score. <br> <br>
+
+                        To sum up, the rank of the four affective factors of happiness is Life expectancy, and GDP per capita, trust in government, and economy (from most influential to no influence). Also, trust and economy tend to have less effect on happiness score. Therefore, a country with a high life expectancy and high GDP per capita tends to be a happy place.
+                    <p></p>
+                </div>
             </div>
+
             <div class="fp-section section">
-                <div class="tableauPlaceholder" id="viz1613992170811" style="position: relative">
-                    <noscript>
-                        <a href="#">
-                        <img alt=" " src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;health_happiness&#47;Sheet1&#47;1_rss.png" style="border: none">
-                        </a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
-                        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
-                        <param name="embed_code_version" value="3">
-                        <param name="site_root" value="">
-                        <param name="name" value="health_happiness&#47;Sheet1">
-                        <param name="tabs" value="no">
-                        <param name="toolbar" value="yes">
-                        <param name="static_image" value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;health_happiness&#47;Sheet1&#47;1.png">
-                        <param name="animate_transition" value="yes">
-                        <param name="display_static_image" value="yes">
-                        <param name="display_spinner" value="no">
-                        <param name="display_overlay" value="yes">
-                        <param name="display_count" value="yes">
-                        <param name="language" value="en">
-                        <param name="filter" value="publish=yes">
-                    </object>
-                </div>                
-                <script>var divElement = document.getElementById('viz1613992170811');
-var vizElement = divElement.getElementsByTagName('object')[0];
-vizElement.style.width = '85%';
-vizElement.style.height = divElement.offsetWidth * 0.4 + 'px';
-var scriptElement = document.createElement('script');
-scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-vizElement.parentNode.insertBefore(scriptElement, vizElement);</script> 
+                <div class="conclusion">
+                    <p> 
+                        </p><h2>Data Source</h2> <br> <br>
+                        All data used in this project is collected by Sustainable Development Solutions Network in the World Happiness Report database. It is a open source database in kaggle.<br> <br><br>
+                        <h2>Third Party Library</h2> <br> <br>
+                        The paging structure of the website is built with fullpage, which is a third-party javascript library.
+                    <p></p>
+                </div>
             </div>
+
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
         <script src="https://cse412-21w.github.io/alchemy-of-happiness/src.d474e786.js"> </script>
-        <script src="https://cse412-21w.github.io/alchemy-of-happiness/econ.bc207a97.js"> </script>
+        <script src="https://cse412-21w.github.io/alchemy-of-happiness/econ.8ebba11a.js"> </script>
     </body>
 </html>
