@@ -4,6 +4,7 @@ library(tidyverse)
 library(scales)
 library(gifski)
 library(viridis)
+library(RColorBrewer)
 
 d =read.csv(file = '/Users/xxs77/desktop/happiness_percentage.csv')
 d
@@ -40,7 +41,8 @@ staticplot = ggplot(d_formatted, aes(rank, group = Country, fill = as.factor(Cou
         plot.subtitle=element_text(size = 32, hjust = 0.5, face = "italic", colour = "black"),
         plot.caption = element_text(size = 16, hjust = 0.5, face = "italic", colour = "black"),
         plot.background = element_blank(),
-        plot.margin = margin(1, 3, 1, 6.5, "cm"))
+        plot.margin = margin(1, 3, 1, 6.5, "cm")) +
+  scale_fill_brewer(palette="Paired") + scale_color_brewer(palette="Paired")
 
 anim = staticplot + transition_states(Year, transition_length = 2, state_length = 1) +
   view_follow(fixed_y = TRUE)  + 
@@ -50,3 +52,4 @@ anim = staticplot + transition_states(Year, transition_length = 2, state_length 
 
 animate(anim, nframes = 100, fps = 10,  width = 1200, height = 600, 
         renderer = gifski_renderer("Barplot_country.gif"))
+
