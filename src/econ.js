@@ -5,6 +5,11 @@
 import happinessData from '../static/happiness_percentage1.csv'
 "use strict";
 
+//var vl = require('vega-lite-api');
+//var vegaLite = require('vega-lite');
+//var vega = require('vega');
+//var vegaTooltip = require('vega-tooltip');
+
 var happinessArray = [];
 var yearSet = [];
 const options = {
@@ -35,7 +40,7 @@ d3.csv(happinessData).then(function(data){
     }
   })
   drawGDPVegaLite();
-  drawScatterVegaLite();
+  //drawScatterVegaLite();
 })
 
 function drawScatterVegaLite() {
@@ -46,7 +51,7 @@ function drawScatterVegaLite() {
   
   return vl.markPoint({filled:true})
     .data(happinessArray)
-    .select(selection)
+    .select(selection2)
     .encode(
       vl.x().fieldQ('Economy'),
       vl.y().fieldQ('Happiness_Score'),
@@ -83,4 +88,4 @@ function drawGDPVegaLite() {
     .then(viewElement => {
       document.getElementById('GDPview').appendChild(viewElement);
     });
-}  
+}
