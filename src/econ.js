@@ -22,7 +22,7 @@ const options = {
     //     baseURL: "",
     //   }),
     renderer: "canvas",
-  },
+  }
 };
 
 vl.register(vega, vegaLite, options);
@@ -34,8 +34,8 @@ d3.csv(happinessData).then(function(data){
       yearSet.push(d.year);
     }
   })
-  drawScatterVegaLite();
   drawGDPVegaLite();
+  drawScatterVegaLite();
 })
 
 function drawScatterVegaLite() {
@@ -46,7 +46,7 @@ function drawScatterVegaLite() {
   
   return vl.markPoint({filled:true})
     .data(happinessArray)
-    .select(selection2)
+    .select(selection)
     .encode(
       vl.x().fieldQ('Economy'),
       vl.y().fieldQ('Happiness_Score'),
