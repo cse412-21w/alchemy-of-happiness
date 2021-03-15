@@ -1,14 +1,8 @@
 /** Wenxuan Qi
  * Economy + Trust vs Happiness Score
- * The above code is the original code in this file.
  */ 
 import happinessData from '../static/happiness_percentage1.csv'
 "use strict";
-
-//var vl = require('vega-lite-api');
-//var vegaLite = require('vega-lite');
-//var vega = require('vega');
-//var vegaTooltip = require('vega-tooltip');
 
 var happinessArray = [];
 var yearSet = [];
@@ -40,7 +34,7 @@ d3.csv(happinessData).then(function(data){
     }
   })
   drawGDPVegaLite();
-  //drawScatterVegaLite();
+  drawScatterVegaLite();
 })
 
 function drawScatterVegaLite() {
