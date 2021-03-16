@@ -128,7 +128,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /** Wenxuan Qi
  * Economy + Trust vs Happiness Score
- * The above code is the original code in this file.
  */
 "use strict";
 
@@ -169,7 +168,7 @@ function drawScatterVegaLite() {
   }).bind(vl.radio(yearSet));
   return vl.markPoint({
     filled: true
-  }).data(happinessArray).select(selection).encode(vl.x().fieldQ('Economy'), vl.y().fieldQ('Happiness_Score'), vl.size().fieldQ('Trust_Government_Corruption').legend({
+  }).data(happinessArray).select(selection2).encode(vl.x().fieldQ('Economy'), vl.y().fieldQ('Happiness_Score'), vl.size().fieldQ('Trust_Government_Corruption').legend({
     symbolOpacity: 0.7
   }), vl.color().fieldN('Region').legend({
     symbolOpacity: 1
@@ -186,4 +185,4 @@ function drawGDPVegaLite() {
   });
 }
 },{"../static/happiness_percentage1.csv":"zWvY"}]},{},["NzOO"], null)
-//# sourceMappingURL=https://cse412-21w.github.io/alchemy-of-happiness/econ.96b154f9.js.map
+//# sourceMappingURL=https://cse412-21w.github.io/alchemy-of-happiness/econ.881e09c3.js.map

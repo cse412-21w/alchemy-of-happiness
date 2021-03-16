@@ -3,37 +3,39 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css" integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A==" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cse412-21w.github.io/alchemy-of-happiness/style.bf66501e.css">
+        <link rel="stylesheet" href="https://cse412-21w.github.io/alchemy-of-happiness/style.2bd39ad8.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600" rel="stylesheet">
         <!-- For using vega-lite -->
-        <script src="https://cdn.jsdelivr.net/npm/vega"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite-api"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.19.1/build/vega.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0/build/vega-lite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@4.0.0/build/vega-lite-api.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
+        
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
         <!-- For using d3 -->
         <script src="https://d3js.org/d3.v6.min.js"></script>
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     </head>
 
-      <body>
+    <body>
         <div id="fullPage" class="fullpage-wrapper">
             <div class="fp-section section">
-                    <div>
-                        <header>
-                            <h3>Don't Worry, Be Happy.</h3>
-                        </header>
-                    </div>
-                    <blackquote> 
-                        Alchemy of Happiness
-                    </blackquote>
+                <div>
+                    <header>
+                        <h3>Don't Worry, Be Happy.</h3>
+                    </header>
+                </div>
+                <blackquote> 
+                    Alchemy of Happiness
+                </blackquote>
             </div>
 
             <!--Intro Page1-->
             <div class="fp-section section">
                 <div id="introtext1">
                     <h2>Happiness is a common puersue for people worldwide. </h2> <br>  <br>
-                    Then, the question is what makes people happy? What are the most important factors that makes people happy? <br> 
+                    Then, the question is what makes people happy? What are the most important factors that make people happy? <br> 
                     Dig a little bit deeper into global happiness data and the result is interesting.
                 </div>
                 <img src="https://cse412-21w.github.io/alchemy-of-happiness/Barplot_Country.73652849.gif" alt="Barplot_country" style="height:400px;width:65%">
@@ -42,13 +44,12 @@
             <!--Intro Page2-->
             <div class="fp-section section">
                 <div class="description">
-
                     <p></p><h2> Introduction to <happy>Happiness</happy></h2> 
-                        <br><br>  Our data set comes from World Happiness Report. It is a survey of the global happiness and gain recognitions from governments, organizations and civil societies. <br><br> 
+                        <br><br>  Our data set comes from World Happiness Report. It is a survey of global happiness and gains recognition from governments, organizations, and civil societies. <br><br> 
                             
                         The reports review the state of happiness in the world today and show how the new science of happiness explains personal and national variations in happiness. <br><br> 
                                 
-                        To achieve our goal, we selected 4 potential factors in the report, trust in government, economy, life expectancy, and GDP per capita. We are hoping to see how does each factor effect the happiness score? Which factor is the leading cause to a country's happiness.
+                        To achieve our goal, we selected 4 potential factors in the report, trust in government, economy, life expectancy, and GDP per capita. We are hoping to see how does each factor affects the happiness score? Which factor is the leading cause of a country's happiness?
                     <p></p>
                 </div>
                 <div class="visualization">
@@ -86,27 +87,20 @@ vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
                 </div>
             </div>
 
-
             <!--Trust in Government-->
             <div class="fp-section section">
                 <div class="description">
                     <p id="govtext"> 
-                        </p><h2>Govorment & Economy <br>vs<br> <happy>Happiness</happy></h2> <br> <br>
-                        The graph demonstrate the correlation on Economy porportion and trust in Government VS Happiness score. We estimated to obverse a positive relationship, which however is not shown significantly in the graph. <br> <br> Alternatively, we found that the higher the level of trust in Government is, the more polarized the happiness score data distributes. Also, there is no convincing evidence showing that there is a direct connection between economy and happniess. We cannot conclude whether there is a linear relationship given to the graph
+                        </p><h2>Trust in Government & Economy <br>vs<br> <happy>Happiness</happy></h2> <br> <br>
+                        The graph demonstrates the correlation between Economy proportion and trust in Government VS Happiness score. We estimated to obverse a positive relationship, which however is not shown significantly in the graph. <br> <br> Alternatively, we found that the higher the level of trust in Government is, the more polarized the happiness score data distributes. Also, there is no convincing evidence showing that there is a direct connection between the economy and happiness score. We cannot conclude whether there is a linear relationship given to the graph
                     <p></p>
                 </div>
-                <div class="visualization">
+                <div class="visualization">                  
                     <section id="vegaDemo">
-                        <!--
-                          Economy + Trust vs Happiness Plot
-                          Wenxuxan Qi
-                        -->
                         <h3>Economy Proportion and Trust in Government vs Happiness:</h3>
-                    <div id="view"></div>
-                    </section>
-                </div>
+                    <div id="view"></div>           
+                </section></div>
             </div>
-
 
             <!--Health and Happiness Page1-->
             <div class="fp-section section">
@@ -114,7 +108,7 @@ vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
 
                     <p>
                         </p><h2> Life Expectancy</h2> <br><br>  Darker regions under happiness score corresponds with darker shaded dots under life expectancy factor. <br><br> 
-                        From the map, it can be observed that regions with high life expectaancy are generally happier.
+                        From the map, it can be observed that regions with high life expectancy are generally happier.
                     <p></p>
                 </div>
                 <div class="visualization">
@@ -159,12 +153,12 @@ vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
                     <p>
                         </p><h2> Health = <happy>Happiness</happy></h2> <br><br>
                         The scatter plot illustrates the relationship between the two variables, 
-                        showing all five years of data with X-axis being Happiness Score and Y-axis being Life Expectancy.
+                        showing all five years of data with the X-axis being Happiness Score and the Y-axis being Life Expectancy.
                         <br> <br>
                         We divided the points into four sub-sections by high/low life expectancy & high/low happiness score. 
-                        As we can see that majority of the data is divided into Quadrant I (+,+) and Quadrant III (-,-), which means life expectancy directly relates to its happiness score.
+                        As we can see the majority of the data is divided into Quadrant I (+,+) and Quadrant III (-,-), which means life expectancy directly relates to its happiness score.
                         <br> <br>
-                        More specificly, high life expectancy countries has high happiness score and, conversely, low life expectancy countries has low happiness score.
+                        More specifically, high life expectancy countries have high happiness score and, conversely, low life expectancy countries has low happiness score.
                     <p></p>
                 </div>
                 <div class="visualization">
@@ -327,6 +321,7 @@ vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
         <script src="https://cse412-21w.github.io/alchemy-of-happiness/src.d474e786.js"> </script>
-        <script src="https://cse412-21w.github.io/alchemy-of-happiness/econ.96b154f9.js"> </script>
+        <script src="https://cse412-21w.github.io/alchemy-of-happiness/econ.881e09c3.js"> </script>
     </body>
+
 </html>
